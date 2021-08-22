@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+// import '@fortawesome/fontawesome-free/css/all.min.css'; 
+// import 'bootstrap-css-only/css/bootstrap.min.css'; 
+// import 'mdbreact/dist/css/mdb.css';
+import getReducer from './reducers'
+import reducer from './reducers'
+import thunk from 'redux-thunk'
+import { applyMiddleware, combineReducers, createStore, compose} from 'redux';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={createStore(reducer, applyMiddleware(thunk))}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
