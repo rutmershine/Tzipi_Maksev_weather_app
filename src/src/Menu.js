@@ -116,7 +116,7 @@ export default function PrimarySearchAppBar() {
           >
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Herolo Weather Task
+            Weather
           </Typography>
           <div className={classes.grow} />
           <div className={`${classes.sectionDesktop} navigation`}>

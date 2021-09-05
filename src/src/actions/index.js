@@ -6,7 +6,7 @@ import axios from 'axios';
 export const get_from_axios = (key, fav = -1) => {
     return (dispatch) => {
 
-            axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=q8L6rYi1mkluWSbfNGOKVNAuEi7YKdeJ`)
+            axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=6nwj4hRlQs081XAALVnPps900o0ALHiY`)
             .then((response) => {
                 dispatch(getCurrentWeather(response.data[0]))
                 console.log(response.data[0])
@@ -24,7 +24,7 @@ export const fetchDailyForecast = (key) => {
     return (dispatch) => {
         debugger
 
-        axios.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=q8L6rYi1mkluWSbfNGOKVNAuEi7YKdeJ&metric=true`)//key 2 
+        axios.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}?apikey=6nwj4hRlQs081XAALVnPps900o0ALHiY&metric=true`)//key 2 
             .then((data) => {
                 debugger
                 dispatch(fiveDailyForecastsAction(data.data))
@@ -39,7 +39,7 @@ export const fetchDailyForecast = (key) => {
 export const fetchSearchResult = (text) => {
     return (dispatch) => {
         debugger
-        axios.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=q8L6rYi1mkluWSbfNGOKVNAuEi7YKdeJ&q=${text}&language=en-us`)//good from server!
+        axios.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=6nwj4hRlQs081XAALVnPps900o0ALHiY&q=${text}&language=en-us`)//good from server!
             .then((response) => {
                 debugger
                 dispatch(autocompleteSearchAction(response.data))
